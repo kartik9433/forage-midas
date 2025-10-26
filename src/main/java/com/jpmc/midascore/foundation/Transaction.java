@@ -1,8 +1,5 @@
 package com.jpmc.midascore.foundation;
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-
-@JsonIgnoreProperties(ignoreUnknown = true)
 public class Transaction {
     private long senderId;
     private long recipientId;
@@ -43,6 +40,7 @@ public class Transaction {
 
     @Override
     public String toString() {
-        return "Transaction {senderId=" + senderId + ", recipientId=" + recipientId + ", amount=" + amount + "}";
+        return String.format("Transaction {senderId=%d, recipientId=%d, amount=%.2f}",
+                senderId, recipientId, amount);
     }
 }
